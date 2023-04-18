@@ -1082,21 +1082,21 @@ def main():
             log.write("\n\n   ")
             if options.QH:
                 log.write('{:<39} {:>13} {:>10} {:>13} {:>13} {:>10} {:>10} {:>13} '
-                          '{:>13}'.format("Structure", "E", "ZPE", "H", "qh-H", "T.S", "T.qh-S", "G(T)", "qh-G(T)"),
+                          '{:>16}'.format("Structure", "E", "ZPE", "H", "qh-H", "T.S", "T.qh-S", "G(T)", "qh-G(T)"),
                           thermodata=True)
             else:
-                log.write('{:<39} {:>13} {:>10} {:>13} {:>10} {:>10} {:>13} {:>13}'.format("Structure", "E", "ZPE", "H",
+                log.write('{:<39} {:>13} {:>10} {:>13} {:>10} {:>10} {:>13} {:>16}'.format("Structure", "E", "ZPE", "H",
                                                                                            "T.S", "T.qh-S", "G(T)",
                                                                                            "qh-G(T)"), thermodata=True)
         else:
             log.write("\n\n   ")
             if options.QH:
                 log.write('{:<39} {:>13} {:>13} {:>10} {:>13} {:>13} {:>10} {:>10} {:>13} '
-                          '{:>13}'.format("Structure", "E_SPC", "E", "ZPE", "H_SPC", "qh-H_SPC", "T.S", "T.qh-S",
+                          '{:>16}'.format("Structure", "E_SPC", "E", "ZPE", "H_SPC", "qh-H_SPC", "T.S", "T.qh-S",
                                           "G(T)_SPC", "qh-G(T)_SPC"), thermodata=True)
             else:
                 log.write('{:<39} {:>13} {:>13} {:>10} {:>13} {:>10} {:>10} {:>13} '
-                          '{:>13}'.format("Structure", "E_SPC", "E", "ZPE", "H_SPC", "T.S", "T.qh-S", "G(T)_SPC",
+                          '{:>16}'.format("Structure", "E_SPC", "E", "ZPE", "H_SPC", "T.S", "T.qh-S", "G(T)_SPC",
                                           "qh-G(T)_SPC"), thermodata=True)
         if options.cosmo is not False:
             log.write('{:>13} {:>16}'.format("COSMO-RS", "COSMO-qh-G(T)"), thermodata=True)
@@ -1253,7 +1253,7 @@ def main():
             log.write("This opportunity is not implemented yet ...")
             
         if options.QH:
-            qh_print_format = "\n\n   {:<39} {:>13} {:>13} {:>10} {:>13} {:>13} {:>10} {:>10} {:>13} {:>13}"
+            qh_print_format = "\n\n   {:<39} {:>13} {:>13} {:>10} {:>13} {:>13} {:>10} {:>10} {:>13} {:>16}"
             if options.spc and options.cosmo_int:
                 log.write(qh_print_format.format("Structure", "Try", "E", "ZPE", "H_SPC", "qh-H_SPC", "T.S", "T.qh-S",
                                                  "G(T)_SPC", "COSMO-RS-qh-G(T)_SPC"), thermodata=True)
@@ -1267,7 +1267,7 @@ def main():
                 log.write(qh_print_format.format("Structure", "Try", "E", "ZPE", "H", "qh-H", "T.S", "T.qh-S", "G(T)",
                                                  "qh-G(T)"), thermodata=True)
         else:
-            print_format_3 = "\n\n  {:<40} {:>13} {:>13} {:>10} {:>13} {:>10} {:>10} {:>13} {:>13}"
+            print_format_3 = "\n\n  {:<40} {:>13} {:>13} {:>10} {:>13} {:>10} {:>10} {:>13} {:>16}"
             if options.spc and options.cosmo_int:
                 log.write(print_format_3.format("Structure", "Try", "E", "ZPE", "H_SPC", "T.S", "T.qh-S", "G(T)_SPC",
                                                 "COSMO-RS-qh-G(T)_SPC"), thermodata=True)
@@ -1368,7 +1368,7 @@ def main():
             log.write("\n   T init:  %.1f,   T final: %.1f" % (interval[0], interval[-1]))
 
         if options.QH:
-            qh_print_format = "\n\n   {:<39} {:>13} {:>24} {:>13} {:>10} {:>10} {:>13} {:>13}"
+            qh_print_format = "\n\n   {:<39} {:>13} {:>24} {:>13} {:>10} {:>10} {:>13} {:>16}"
             if options.spc and options.cosmo_int:
                 log.write(qh_print_format.format("Structure", "Temp/K", "H_SPC", "qh-H_SPC", "T.S", "T.qh-S",
                                                  "G(T)_SPC", "COSMO-RS-qh-G(T)_SPC"), thermodata=True)
@@ -1382,7 +1382,7 @@ def main():
                 log.write(qh_print_format.format("Structure", "Temp/K", "H", "qh-H", "T.S", "T.qh-S", "G(T)",
                                                  "qh-G(T)"), thermodata=True)
         else:
-            print_format_3 = '\n\n   {:<39} {:>13} {:>24} {:>10} {:>10} {:>13} {:>13}'
+            print_format_3 = '\n\n   {:<39} {:>13} {:>24} {:>10} {:>10} {:>13} {:>16}'
             if options.spc and options.cosmo_int:
                 log.write(print_format_3.format("Structure", "Temp/K", "H_SPC", "T.S", "T.qh-S", "G(T)_SPC",
                                                 "COSMO-RS-qh-G(T)_SPC"), thermodata=True)
